@@ -56,3 +56,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >Configure auth schema. Push changes.
 >Create basic UI. Create new user.
 >Create, review and merge pull request
+
+## [Step 4] Auth UI
+>Create auth pages.
+>Create auth layout
+>Create auth module
+>Create auth views. Register and Login form. Get app Logo.
+>Create, review and merge pull request
