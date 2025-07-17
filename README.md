@@ -50,3 +50,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >npm i -D drizzle-kit@0.31.1 tsx@4.19.4
 >Add Schema. Push scheme. Verify changes in neon. Verify changes i Drizzle Studio
 >Create, Review and Merge pull request
+
+## [Step 3] Auth setup
+>Integrate Better Auth.  npm install better-auth@1.2.8 --legacy-peer-deps
+>Configure auth schema. Push changes.
+>Create basic UI. Create new user.
+>Create, review and merge pull request
