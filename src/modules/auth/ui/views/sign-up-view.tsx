@@ -13,6 +13,8 @@ import {useForm } from "react-hook-form";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+//import { provider } from "@radix-ui/react-tooltip";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const formSchema = z.object({
     name: z.string().min(4, {message: "Name is required"}),
@@ -39,14 +41,15 @@ export const SignUpView = () => {
             confirmPassword: "",
         },
     });
-    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    const onSubmit = (data: z.infer<typeof formSchema>) => {
         setError(null);
         setPending(false);
-        await authClient.signUp.email(
+        authClient.signUp.email(
             {
                 name: data.name,
                 email: data.email,
                 password: data.password,
+                callbackURL: "/",
             },
             {
                 onSuccess: ()=> {
@@ -54,11 +57,31 @@ export const SignUpView = () => {
                     router.push("/");
                 },
                 onError: ({error})=> {
+                    setPending(false);
                     setError(error.message)
                 }
             }
         )
     };
+    const onSocial = (provider: "github" | "google") => {
+        setError(null);
+        setPending(false);
+        authClient.signIn.social(
+            {
+                provider: provider,
+                callbackURL: "/",
+            },
+            {
+                 onSuccess: ()=> {
+                    setPending(false);
+                },
+                onError: ({error})=> {
+                    setPending(false);
+                    setError(error.message)
+                }
+            }
+        )
+    }
     return (
         <div className="flex flex-col gap-6">
             <Card className="overflow-hidden p-0">
@@ -151,7 +174,7 @@ export const SignUpView = () => {
                                     </Alert>
                                 )}
                                 <Button disabled={pending} type="submit" className="w-full">
-                                    Sign In
+                                    Sign Up
                                 </Button>
                                 <div className="after:border-border relative text-center text-sm after:absolute 
                                 after:inset-0 after:top-1.5 after:z-0 after:flex after:items-center after:border-t">
@@ -162,20 +185,22 @@ export const SignUpView = () => {
                                 <div className="grid grid-cols-2 gap-4">
                                     <Button
                                         disabled={pending}
+                                        onClick={() => onSocial("google")}
                                         variant="outline"
                                         type="button"
                                         className="w-full"                        
                                     >
-                                        Google
+                                        <FaGoogle />
 
                                     </Button>
                                     <Button
-                                        disabled={pending} 
+                                        disabled={pending}
+                                        onClick={() => onSocial("github")}   
                                         variant="outline"
                                         type="button"
                                         className="w-full"                        
                                     >
-                                        Facebook
+                                        <FaGithub />
 
                                     </Button>                                    
                                 </div>

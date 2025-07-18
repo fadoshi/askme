@@ -63,3 +63,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >Create auth module
 >Create auth views. Register and Login form. Get app Logo.
 >Create, review and merge pull request
+
+## [Step 4] Social Auth
+>Configure social providers Google and Github
+>Protact non-auth pages
+>Create, review and merge pull request
