@@ -76,4 +76,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >Modify 'globals.css'(2:44:30)  theme and fix auth view
 >Create, review and merge pull request
 
+## [Step 7] Dashboard Navbar
+>Create dashboard navbar. colapse button. 
+>Add responsive drawer
+>input button to search for anything.
+>Create, review and merge pull request
+
+
 
