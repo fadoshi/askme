@@ -82,5 +82,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >input button to search for anything.
 >Create, review and merge pull request
 
+## [Step 8] tRPC Setup
+>Setup tRPC. init, route, client, query-client,api route hendler.
+>npm install @trpc/server@11.1.2 @trpc/client@11.1.2 @trpc/tanstack-react-query@11.1.2 @tanstack/react-query@5.76.1 zod@3.25.7 client-only server-only
+>mount tRPC provider into root layout
+>Experiment with client commopent and server compomment
+>Preview prefetching
+
 
 
