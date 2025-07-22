@@ -88,6 +88,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >mount tRPC provider into root layout
 >Experiment with client commopent and server compomment
 >Preview prefetching
+>Create, review and merge pull request
+
+## [Step 9] Agent entity Setup
+>Add agent: schema, module, procedures, pages.
+>npm i nanoid
+>Add Eror and Loading state by using server component (pending)..rather than api call from client page to fetch state
+>Create, review and merge pull request
 
 
 
