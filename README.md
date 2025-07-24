@@ -92,9 +92,37 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## [Step 9] Agent entity Setup
 >Add agent: schema, module, procedures, pages.
->npm i nanoid
+>npm i nanoid (shorter and readable than UUID)
 >Add Eror and Loading state by using server component (pending)..rather than api call from client page to fetch state
 >Create, review and merge pull request
+
+## [Step 9a] Agent Form with responsive dialog
+>Add Responsive dialog componenet in to commmand component. button cursor css in globle.
+>Add protectedProcedure, agents.create procedure, List header, new agent dialog.
+>Add agent form that is reuseable for create and update
+
+## [Step 9b] Agent Data table
+>Add data table component. npm install @tanstack/react-table
+>Add empty state componnts..optain assets
+
+## [Step 9c] Agent Filter
+>agent.getmany procedure
+>Add NUQS
+>Add filter, search input, pagination.
+>Sync RSC filter and client filter
+
+## [Step 9d] Single Agent Page + Update and Delete 
+>Modify agent.getOne procedure
+>Add agent id ppage
+>add redirect methode on datatable column.
+>Add Agent ID View
+>Add agent.remove and agent.delete procedure
+>>Create, review and merge pull request
+
+## [Step 10] Meeting setup 
+>Upnext!
+
+
 
 
 
