@@ -113,15 +113,47 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## [Step 9d] Single Agent Page + Update and Delete 
 >Modify agent.getOne procedure
->Add agent id ppage
+>Add agent id page
 >add redirect methode on datatable column.
 >Add Agent ID View
 >Add agent.remove and agent.delete procedure
 >>Create, review and merge pull request
 
 ## [Step 10] Meeting setup 
->Upnext!
+>Add meeting schema, module, procedure, page
 
+## [Step 10a] Meeting setup 
+>Add meeting list hearder and dialog
+>Add meeting.create procedure
+>Add meeting form, sommand select component, reusable create and update 
+
+## [Step 10b] Meeting Data Table
+>Modify procedure to incled "duration and inner-join agent
+>Make reuseable data table comonent
+>Add empty state component
+
+## [Step 10c] Meeting Filter
+>Add NUQS
+>Add filter, search input, pagination.
+>Sync RSC filter and client filter
+
+>rm -rf .next ...then npm run dev to clear cache and re run time compliler
+
+## [Step 10d] Single Meeting Page + Update and Delete 
+>Modify meeting.getOne procedure
+>Add meeting id page
+>add redirect methode on datatable column.
+>Add Agent ID View
+>Add meeting.remove and meeting.delete procedure
+>Add differet meeting status
+
+# [Step 10e] Video Call
+>Obtain Stream API keys
+>Add stream video SDK
+>generateAvatar method
+>generateToken procedure
+>modify meetnigs.create procedure
+>Add call page and call view
 
 
 
