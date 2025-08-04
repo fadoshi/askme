@@ -11,7 +11,6 @@ import { useMeetingsFilters } from "../../hooks/use-meetings-filters";
 import { DataPagination } from "@/components/data-pagination";
 import { useRouter } from "next/navigation";
 
-
 export const MeetingsView = () => {
     const router = useRouter();
     const [filters, setFilters] = useMeetingsFilters();

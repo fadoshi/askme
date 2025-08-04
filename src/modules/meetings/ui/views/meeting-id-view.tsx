@@ -17,6 +17,7 @@ import { UpcomingState } from "../components/upcoming-state";
 import { ActiveState } from "../components/active-state";
 import { CancelledState } from "../components/cancelled-state";
 import { ProcessingState } from "../components/processing-state";
+import { CompletedState } from "../components/completed-state";
 
 interface Props {
   meetingId: string;
@@ -76,7 +77,7 @@ export const MeetingIdView = ({ meetingId }: Props) => {
       />
       {isCancelled && <CancelledState />}
       {isProcessing && <ProcessingState />}
-      {isCompleted && <div>Completed</div>}
+      {isCompleted && <CompletedState data={data} />}
       {isUpcoming && <UpcomingState
       meetingId={meetingId}
       onCancelMeeting={()=> {}} 
@@ -85,31 +86,6 @@ export const MeetingIdView = ({ meetingId }: Props) => {
       {isActive && <ActiveState 
       meetingId={meetingId}
       />}
-
-
-      {/* <div className="bg-white rounded-lg border">
-        <div className="px-4 py-5 gap-y-5 flex flex-col col-span-5">
-          <div className="flex items-center gap-x-3">
-            <GeneratedAvatar
-              variant="botttsNeutral"
-              seed={data.name}
-              className="size-10"
-            />
-            <h2 className="text-2xl font-medium">{data.name}</h2>
-          </div>
-          <Badge
-            variant="outline"
-            className="flex items-center gap-x-2 [&>svg]:size-4"
-          >
-            <VideoIcon className="text-primary" />
-            {data.meetingCount} {data.meetingCount === 1 ? "Meeting" : "Meetings"}
-          </Badge>
-          <div className="flex flex-col gap-y-4">
-  <p className="text-lg font-medium">Instructions</p>
-  <p className="text-neutral-800">{data.instructions}</p>
-</div>
-        </div>
-      </div> */}
     </div>
     </>
   );
