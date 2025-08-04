@@ -154,6 +154,26 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >generateToken procedure
 >modify meetnigs.create procedure
 >Add call page and call view
+>>Create, review and merge pull request
+
+# [Step 11] Connect Agent
+>Get OpenAI API key
+>Setup ngrok to expose localhost
+>Connect agent to video call
+>Handle meeting states depending on webhook event
+
+# [Step 11a] Background Jobs
+>Add webhook events. call session, transcription recording.
+>setup Inngest. function to summarize transcript
+>Summary, recording, transcript, and chat? tab after compleing meeeting
+
+# [Step 11b] Set Chat Tab (partially done)
+>npm i stream-chat. src/lib/stream-chat.tsx
+>meeting->generateChatToken procedure
+>chat-provider and chat-ui component
+>npm i stream-chat-react. npm i openai.
+>Rest is Pending..
+>>Create, review and merge pull request
 
 
 
