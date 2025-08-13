@@ -24,7 +24,7 @@ const Page = async ({ params }: Props) => {
     const queryClient = getQueryClient();
      void queryClient.prefetchQuery(trpc.meetings.getOne.queryOptions({id: meetingId}));
      //TODO: prefetch 'meeting.getTranscript
-    
+    // No need for TODO. we used useQuery in Transcript.tsx
      return (
         <HydrationBoundary state={dehydrate(queryClient)} >
       <Suspense fallback={<MeetingIdViewLoading />}>
