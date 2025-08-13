@@ -4,7 +4,7 @@ import JSONL from "jsonl-parse-stringify";
 import { agents, meetings, user} from "@/db/schema";
 import { videoClient  } from "@/lib/stream-video";
 import { TRPCError } from "@trpc/server";
-import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
+import { createTRPCRouter, premiumProcedure, protectedProcedure } from "@/trpc/init";
 import { meetingsInsertSchema, meetingsUpdateSchema } from "../schema";
 import { and, eq, sql, getTableColumns, ilike, desc, count, inArray } from "drizzle-orm";
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, MIN_PAGE_SIZE, MAX_PAGE_SIZE } from "@/constants";
@@ -167,7 +167,7 @@ export const meetingsRouter = createTRPCRouter({
             return updatedMeeting;
         }),
 
-    create: protectedProcedure
+    create: premiumProcedure("meetings")
         .input(meetingsInsertSchema)
         .mutation(async ({ input, ctx }) => {
             const [createdMeeting] = await db

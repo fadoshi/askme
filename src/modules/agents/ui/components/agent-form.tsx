@@ -3,7 +3,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { AgentGetOne } from "../../types";
 import { useTRPC } from "@/trpc/client";
-//import  {useRouter } from "next/navigation";
+import  {useRouter } from "next/navigation";
 import {useMutation, useQueryClient } from "@tanstack/react-query";
 import { agentsInsertSchema } from "../../schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,7 +35,7 @@ export const AgentForm = ({
 
 }: AgentFormProps) => {
     const trpc = useTRPC();
-    //const router = useRouter();
+    const router = useRouter();
     const queryClient = useQueryClient();
 
     const createAgent = useMutation(
@@ -44,12 +44,18 @@ export const AgentForm = ({
                 await queryClient.invalidateQueries(
                     trpc.agents.getMany.queryOptions({}),
                 );
-                //TODO: invalidate free tiew usage
+                //Invalidate free tiew usage
+                await queryClient.invalidateQueries(
+                    trpc.premium.getFreeUsage.queryOptions(),
+                );                
                 onSuccess?.();
             },
             onError: (error) => {
                 toast.error(error.message);
-                //TODO: check if error code is "Forbidden", redireact to "/upgrade"
+                // Check if error code is "Forbidden", redireact to "/upgrade"
+                if (error.data?.code === "FORBIDDEN") {
+                    router.push("/upgrade");
+                }
             },
         }),
     );
@@ -69,8 +75,7 @@ export const AgentForm = ({
                 onSuccess?.();
             },
             onError: (error) => {
-                toast.error(error.message);
-                //TODO: check if error code is "Forbidden", redireact to "/upgrade"
+                toast.error(error.message);                               
             },
         }),
     );
@@ -109,7 +114,7 @@ export const AgentForm = ({
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input {...field} placeholder="Eg. Math Tutor or Dietitian" />
+                                <Input {...field} placeholder="Eg. Math Tuitor or Dietitian" />
                             </FormControl>
                             <FormMessage />
                         </FormItem>

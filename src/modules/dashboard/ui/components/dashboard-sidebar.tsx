@@ -6,9 +6,10 @@ import {BotIcon, VideoIcon, StarIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils"; //dynamicaly change classname if needed
+import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { DashboardUserButton } from "./dashboard-user-button";
+import { DashboardTrail } from "./dashboard-trial";
 
 const firstSection = [
     {
@@ -106,6 +107,7 @@ export const DashboardSidebar = () => {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
+                <DashboardTrail />
                 <DashboardUserButton />
             </SidebarFooter>
         </Sidebar>

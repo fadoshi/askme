@@ -175,6 +175,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >Rest is Pending..
 >>Create, review and merge pull request
 
+# [Step 12] Payments
+>Add Polar SDK
+>Integrate Polar with better auth integration (lib)
+>Create premiumProcedure. Add to _app.ts router. Add polarClient plugins to Auth_client.
+>Free user component (module). Throw error when limit reached.
+>Redirect Upgrade option when free tier is reached
+
+
 
 
 
