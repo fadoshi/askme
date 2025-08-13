@@ -32,9 +32,12 @@ export const MeetingIdView = ({ meetingId }: Props) => {
 
   const removeMeeting = useMutation(
     trpc.meetings.remove.mutationOptions({
-      onSuccess: () => {
-        queryClient.invalidateQueries(trpc.meetings.getMany.queryOptions({}));
-        //ToDo: invalidate free tier usage
+      onSuccess: async () => {
+        await queryClient.invalidateQueries(trpc.meetings.getMany.queryOptions({}));
+        // Invalidate free tier usage
+        /* await queryClient.invalidateQueries(
+                    trpc.premium.getFreeUsage.queryOptions(),
+                );  */
         router.push("/meetings");
       },
       onError: (error) => {
