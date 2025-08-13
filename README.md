@@ -182,6 +182,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >Free user component (module). Throw error when limit reached.
 >Redirect Upgrade option when free tier is reached
 
+# [Step 13] Miscellaneous
+> Dashboard Command
+> Meeting count to agent
+> Test build
+
 
 
 
